@@ -1,0 +1,12 @@
+to RecursiveSquare :sideLength 	;declare sideLegth parameter
+
+if :sideLength < 0 [stop]      	;make sure sideLegth variable isn't negative
+						
+repeat 4 [fd :sideLength lt 90]	;draw a sqaure using repeat and the sideLength variable
+
+RecursiveSquare :sideLength-25	;call recursive square, pass in the sidelength-25
+						;this draws a box thats sidelength-25 by sidelength-25
+						;next call (assuming we don't hit 0, is sidelength-50, etc.
+
+end
+

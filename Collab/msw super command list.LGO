@@ -1,0 +1,644 @@
+to allmycircles
+pd
+setsc [0 0 0]
+setpc [255 255 255]
+circle 100
+pu
+rs 125
+pd
+circle 100
+pu
+ls 62
+fd 115
+pd
+circle 100
+setfc [255 0 0]
+fill
+pu
+lt 135
+fd 150
+setfc [0 255 0]
+fill
+lt 135
+fd 175
+setfc [0 0 255]
+fill
+lt 90
+fd 50
+setfc [255 0 255]
+fill
+lt 90
+fd 100
+setfc [255 255 0]
+fill
+lt 115
+fd 75
+setfc [0 255 255]
+fill
+lt 135
+fd 50
+setfc [255 255 255]
+fill
+pd
+end
+
+to allmycirclesfaked
+pd
+setsc [0 0 0]
+setpc [255 255 255]
+circle 100
+pu
+rt 90
+fd 125
+pd
+circle 100
+pu
+lt 90
+fd 90
+lt 90
+fd 62
+rt 90
+fd 25
+pd
+circle 100
+setfc [255 0 0]
+fill
+pu
+lt 135
+fd 150
+setfc [0 255 0]
+fill
+lt 90
+lt 45
+fd 175
+setfc [0 0 255]
+fill
+lt 90
+fd 50
+setfc [255 0 255]
+fill
+lt 90
+fd 100
+setfc [255 255  0]
+fill
+rt 135
+rt 135
+lt 25
+fd 75
+setfc [0 255 255]
+fill
+lt 135
+fd 50
+setfc [255 255 255]
+fill
+pd
+end
+
+to as
+setfc [255 0 0]
+fill
+pu
+lt 135
+fd 150
+setfc [255 255 0]
+fill
+lt 90
+lt 45
+fd 175
+setfc [0 0 255]
+fill
+lt 90
+fd 50
+setfc [255 0 255]
+fill
+lt 90
+fd 100
+setfc [255 127 0]
+fill
+rt 135
+rt 135
+lt 25
+fd 75
+setfc [0 255 0]
+fill
+lt 135
+fd 50
+setfc [255 255 255]
+fill
+pd
+end
+
+to bk180 :x
+bk :x
+rt 180
+end
+
+to bow :n
+fd :n
+rt 135
+fd :n
+rt 135
+fd :n
+rt 135
+fd :n
+rt 135
+fd :n
+ht
+end
+
+to bug2 :n
+square :n*4
+rs :n*4
+square :n*3
+rs :n*3
+square :n*2
+rs :n*2
+repeat 2 [square :n rs :n]
+square (:n/2)
+rs (:n/2)
+square (:n/2)
+rs :n*2
+fd :n*3
+ls (:n/2)*3
+rt 180
+fd (:n/2)
+lsquare (:n/2)
+pu
+home
+fd :n
+rt 90
+fd 45
+pd
+repeat 4 [fd :n*.4 lt 90]
+fd :n*.2
+lt 90
+pu
+fd 40
+lt 90
+end
+
+
+to bug
+square 100
+rt 90
+fd 100
+lt 90
+square 75
+rt 90
+fd 75
+lt 90
+square 50
+rt 90
+fd 50
+lt 90
+square 25
+rt 90
+fd 25
+lt 90
+square 25
+rt 90
+fd 25
+lt 90
+square 12.5
+rt 90
+fd 12.5
+lt 90
+square 12.5
+rt 90
+fd 50
+lt 90
+fd 75
+lt 90
+fd 37.5
+lt 90
+fd 12.5
+lsquare 12.5
+pu
+home
+fd 25
+rt 90
+fd 45
+pd
+fd 10
+lt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 5
+lt 90
+pu
+fd 40
+lt 90
+fd 17
+pd
+fd 15
+lt 90
+fd 15
+lt 90
+fd 15
+lt 90
+fd 15
+bk 8
+lt 90
+fd 7
+lt 90
+fd 7
+lt 90
+pu
+fd 40
+pd
+fd 15
+lt 90
+fd 15
+lt 90
+fd 15
+lt 90
+fd 15
+lt 90
+fd 15
+lt 90
+fd 7
+lt 90
+fd 7
+lt 90
+fd 7
+ht
+pu
+lt 180
+fd 50
+pd
+fd 50
+lt 90
+fd 15
+lt 90
+fd 15
+lt 90
+fd 15
+pu
+rt 90
+fd 35
+rt 90
+fd 50
+rt 90
+pd
+fd 50
+lt 90
+fd 15
+lt 90
+fd 15
+lt 90
+fd 15
+end
+
+to ca
+cs
+ct
+pd
+st
+z
+setsc [255 255 255]
+setpc [0 0 0]
+end
+
+to chain :x :y
+lsquare :x
+fd :x/2
+repeat :y [square :x
+rs :x
+fd :x/2]
+end
+
+to cool :x
+fd (1.2*:x)
+repeat 3 [repeat 3
+[rt 90 fd (:x/5)]
+rt 180
+pu
+fd :x/5
+penpaint
+fd :x]
+repeat 3 [rt 90 fd :x/5]
+rt 180
+end
+
+to cow
+arc 180 25
+pu
+fd 97/4
+pd
+fd 3
+pu
+rt 180
+fd 51.5
+pd
+fd 3
+end
+
+to cpoly :r :n
+pu
+fd :r
+pd
+rt (90+(180/:n))
+repeat :n [fd 2*(sin(180/:n))*:r rt 360/:n]
+pu
+home
+pd
+end
+
+to csquare :s
+pu
+lt 90
+fd .5*:s
+lt 90
+fd .5*:s
+lt 180
+pd
+repeat 4 [fd :s rt 90]
+pu
+fd .5*:s
+rt 90
+fd .5*:s
+lt 90
+pd
+end
+
+to ctri
+tri 25
+rt 30
+fd 5
+lt 30
+end
+
+to curve
+repeat 180[fd 10 rt 2]
+end
+
+to dsgem :n :r
+repeat 7 [sgem :n :r lt 45]
+sgem :n
+end
+
+to ext
+repeat 10 [pentagon 50 rt 36]
+repeat 10 [pentagon 25 rt 36]
+end
+
+to exy :n
+repeat 10 [pentagon :n rt 36]
+repeat 10 [pentagon :n/2 rt 36]
+end
+
+to fan
+repeat 655  [fd 77 rt 86 bk 53 rt 67 fd 988]
+end
+
+to gem :n :r
+repeat :n [exy :r fd 25]
+end
+
+to gokart
+rectangle 50
+fd 150
+tri 20
+pu
+bk 150
+rt 90
+fd 10
+pd circle 10
+fd 70
+circle 10
+pu
+lt 90
+fd 50
+pd
+fd 4
+pu
+fd 10
+pd
+circle 10
+end
+
+to lchain :x :y
+square :x
+fd :x/2
+repeat :y [lsquare :x
+ls :x
+fd :x/2]
+end
+
+to lpoly :l :s
+repeat :s [fd :l lt 360.0/:s]
+end
+
+to ls :x
+lt 90
+fd :x
+rt 90
+end
+
+to lsquare :l
+repeat 4 [fd :l lt 90]
+end
+
+to net
+poly 242 592
+end
+
+to pentagon :l
+repeat 5 [fd :l rt 72]
+end
+
+to pentastar :n
+lt 18
+poly :n 5
+rt 72 fd 1.6*:n
+repeat 4 [lt 144 fd 1.6*:n]
+end
+
+to pig
+fd 40
+lt 45
+fd 15
+lt 45
+fd 3
+pu
+rt 180
+pu
+fd 3
+pd
+fd 3
+lt 180
+pu
+fd 3
+rt 45
+bk 15
+rt 90
+pd
+fd 15
+rt 45
+fd 3
+pu
+rt 180
+fd 3
+pd
+fd 3
+pu
+bk 3
+rt 90
+rt 45
+bk 15
+lt 45
+bk 40
+pd
+end
+
+to pn
+pennormal
+end
+
+to poly :l :s
+repeat :s [fd :l rt 360.0/:s]
+end
+
+to pow
+pig
+pu
+lt 90
+fd 50
+rt 90
+fd 25
+pd
+cow
+end
+
+to rectangle :l
+repeat 2 [fd :l rt 90 fd 2*:l rt 90]
+end
+
+to resizesq :x
+repeat 10[ make "x repcount*10 repeat 4[fd :x rt 90]]
+end
+
+to rose
+repeat 30 [circle 100
+fd 20
+rt 12
+circle 100]
+end
+
+to rs :x
+rt 90
+fd :x
+lt 90
+end
+
+to rtowerglass
+lt 90
+trowserglass 50
+rt 30.5
+trowserglass 100
+rt 30.5
+trowserglass 150
+end
+
+to S
+circle 100
+fd 20
+rt 12
+circle 100
+end
+
+to sgem :n :r
+repeat 4 [gem :n :r rt 90]
+end
+
+to sp :c
+repeat :c[csquare repcount*5]
+end
+
+to square :l
+repeat 4 [fd :l rt 90]
+end
+
+to start.poly
+;interactive programing to drawpolygons
+local "sides
+local "edge ;creates veriables
+print [this program]
+print [enter the number of sides]
+make "sides first readlist
+print [enter the length of a side]
+make "edge first readlist
+poly :edge :sides
+end
+
+to stri :x :n
+repeat :x [tri :n rt 60 fd :n/2]
+end
+
+to swan
+repeat 18 [csquare 100 lt 10]
+end
+
+to tractorbeam :n :x :m
+lt :n repeat :x [tri :m*repcount]
+end
+
+to trexagon
+repeat 5 [tri 50 lt 60]
+tri 50
+lt 90
+repeat 5 [tri 50 lt 60]
+tri 50
+end
+
+to tri :l
+repeat 3 [fd :l rt 120]
+end
+
+to trowerglass
+lt 30.5
+tri 25
+lt 180
+tri 25
+end
+
+to trowserglass :n
+lt 30
+tri :n
+lt 180
+tri :n
+end
+
+to tstar :n
+rt 18
+repeat 5 [fd :n rt 144]
+end
+
+to tunnle :n
+repeat :n [csquare 10*repcount]
+end
+
+to tunnle2 :n
+lt 45
+repeat :n [csquare 10*repcount]
+end
+
+to tunnle3 :n :x
+repeat :n [circle :x*repcount]
+end
+
+to twoeyefish
+repeat 99 [fd 65 lt 55 fd 866 rt 99 bk 99]
+end
+
+to z
+zoom 0.25
+zoom 1.0
+end
+
+Make "edge 99
+Make "sides 99
