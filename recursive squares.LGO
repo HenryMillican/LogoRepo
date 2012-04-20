@@ -1,0 +1,10 @@
+to RecursiveSquare :sideLength :decrease
+
+if :sideLength < 0 [stop]
+						
+repeat 4 [fd :sideLength lt 90]
+
+RecursiveSquare :sideLength-(:sideLength/:decrease) :decrease-:decrease
+
+end
+
